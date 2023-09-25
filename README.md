@@ -10,6 +10,7 @@ Once you have downloaded the files for a particular checker and installed the OC
 
 If your system provides the make program (e.g., if you are running on any kind of Unix, or on a Windows system with the Cygwin package installed), simply type make on the command line to build an executable checker, or make test to build the checker and immediately use it to process the input file test.f. 
 If you do not have make, you can build and execute the checker manually by issuing the following commands:
+```
   ocamllex lexer.mll
   ocamlyacc -v parser.mly
   ocamlc -c support.mli
@@ -23,6 +24,7 @@ If you do not have make, you can build and execute the checker manually by issui
   ocamlc -c lexer.ml
   ocamlc -c main.ml
   ocamlc -o f support.cmo syntax.cmo core.cmo parser.cmo lexer.cmo main.cmo
+```
 Whichever way you chose to build the checker, you can now use it to process an input file test.f by typing ./f test.f at the command line.
 
 ## License
