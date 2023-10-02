@@ -24,6 +24,16 @@ COPY fullfomsubisorecref/f fullfomsubisorecref
 WORKDIR "${BIN}"
 RUN echo "#!/bin/bash" > fulluntyped
 RUN echo "/usr/bin/ocamlrun ${LIB}/fulluntyped" '$@' >> fulluntyped
+RUN echo "#!/bin/bash" > fulluntypedref
+RUN echo "/usr/bin/ocamlrun ${LIB}/fulluntypedref" '$@' >> fulluntypedref
+RUN echo "#!/bin/bash" > fullomega
+RUN echo "/usr/bin/ocamlrun ${LIB}/fullomega" '$@' >> fullomega
+RUN echo "#!/bin/bash" > fullisorec
+RUN echo "/usr/bin/ocamlrun ${LIB}/fullisorec" '$@' >> fullisorec
+RUN echo "#!/bin/bash" > fullequirec
+RUN echo "/usr/bin/ocamlrun ${LIB}/fullequirec" '$@' >> fullequirec
+RUN echo "#!/bin/bash" > fullfomsubisorecref
+RUN echo "/usr/bin/ocamlrun ${LIB}/fullfomsubisorecref" '$@' >> fullfomsubisorecref
 
 
 RUN find "${BIN}" -type f -print0 | xargs -0 chmod +x
